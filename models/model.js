@@ -10,7 +10,6 @@ const WorkoutSchema = new Schema({
 
   exercise: 
   [{
-
     type: {
         type: String,
         trim: true,
@@ -20,18 +19,38 @@ const WorkoutSchema = new Schema({
         type: String,
         trim: true,
         required: "Name of excerise is required",
+    },
+    weight: {
+      type: Number,
+      required: "Weight incriments required"
+    },
+    sets: {
+      type: Number,
+      required: "Number of sets required"
+    },
+    reps: {
+      type: number,
+      required: "Number of reps required"
+    },
+    duration: {
+      type: Number,
+      required: "Number of minutes required"
+    },
+    cardio: {
+      type: Number,
+      required: "Number of miles completed"
     }
   }],
 
-  email: {
-    type: String,
-    unique: true,
-    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
-  },
+  // email: {
+  //   type: String,
+  //   unique: true,
+  //   match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+  // },
 
-  userCreated: {
+  // userCreated: {
     
-  }
+  // }
 });
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
