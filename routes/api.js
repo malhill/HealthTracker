@@ -16,18 +16,15 @@ router.put("/api/workouts/:id", ({ params, body }, res) => {
         {
             $push: {
                 exercises: body,
-
             },
         },
         {
             new: true,
             runValidators: true
         }
-    )
-        .then(dbWorkout => {
+    ).then(dbWorkout => {
             res.json(dbWorkout);
-        })
-        .catch(err => {
+        }).catch(err => {
             res.json(err);
         });
 });
@@ -42,7 +39,7 @@ router.post("/api/workouts", ({ body }, res) => {
             res.json(err);
         });
 
-    res.send('Got a POST request')
+    res.send('Got a POST request');
 });
 
 router.get("/api/workouts/range", (req, res) => {

@@ -8,7 +8,7 @@ const WorkoutSchema = new Schema({
     default: Date.now
   },
 
-  exercise: 
+  exercises: 
   [{
     type: {
         type: String,
@@ -22,15 +22,15 @@ const WorkoutSchema = new Schema({
     },
     weight: {
       type: Number,
-      required: "Weight incriments required"
+      // required: "Weight incriments required"
     },
     sets: {
       type: Number,
-      required: "Number of sets required"
+      // required: "Number of sets required"
     },
     reps: {
       type: Number,
-      required: "Number of reps required"
+      // required: "Number of reps required"
     },
     duration: {
       type: Number,
@@ -38,7 +38,7 @@ const WorkoutSchema = new Schema({
     },
     cardio: {
       type: Number,
-      required: "Number of miles completed"
+      // required: "Number of miles completed"
     }
   }],
 

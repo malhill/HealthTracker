@@ -7,7 +7,6 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-
 app.use(compression());
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
@@ -18,7 +17,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { use
 
 app.use(require('./routes/html.js'));
 app.use(require('./routes/api.js'));
-
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
