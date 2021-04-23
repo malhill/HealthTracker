@@ -22,15 +22,12 @@ const WorkoutSchema = new Schema({
     },
     weight: {
       type: Number,
-      // required: "Weight incriments required"
     },
     sets: {
       type: Number,
-      // required: "Number of sets required"
     },
     reps: {
       type: Number,
-      // required: "Number of reps required"
     },
     duration: {
       type: Number,
@@ -38,20 +35,16 @@ const WorkoutSchema = new Schema({
     },
     cardio: {
       type: Number,
-      // required: "Number of miles completed"
     }
-  }],
+  }]
+},
+);
 
-  // email: {
-  //   type: String,
-  //   unique: true,
-  //   match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
-  // },
-
-  // userCreated: {
-    
-  // }
-});
+WorkoutSchema.methods.totalDuration = () => {
+  this.exercises.reduce((total, exercise) => {
+    return total + exercise.duration;
+  }, 0);
+};
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
