@@ -44,6 +44,7 @@ WorkoutSchema.methods.totalDuration = () => {
   this.exercises.reduce((total, exercise) => {
     return total + exercise.duration;
   }, 0);
+  console.log(totalDuration());
 };
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
