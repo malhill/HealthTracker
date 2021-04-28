@@ -8,6 +8,8 @@ async function init() {
     } else {
       document.querySelector("#continue-btn").classList.add("d-none")
     }
+    //Looking to see if duration is populating
+    console.log(workout);
   }
 }
 
