@@ -10,9 +10,9 @@ router.get('/api/workouts', (req,res) => {
         }
     }])
     .then(dbWorkout => {
-        res.json(dbWorkout);
+        return res.json(dbWorkout);
     }).catch(err => {
-        res.json(err);
+        return res.json(err);
     });
 });
 
@@ -30,9 +30,9 @@ router.put("/api/workouts/:id", ({ params, body }, res) => {
             runValidators: true
         }
     ).then(dbWorkout => {
-            res.json(dbWorkout);
+            return res.json(dbWorkout);
         }).catch(err => {
-            res.json(err);
+            return res.json(err);
         });
 });
 
@@ -40,10 +40,10 @@ router.post("/api/workouts", ({ body }, res) => {
     console.log(body);
     db.Workout.create({})
         .then(dbWorkout => {
-            res.json(dbWorkout);
+            return res.json(dbWorkout);
         })
         .catch(err => {
-            res.json(err);
+            return res.json(err);
         });
 
     res.send('Got a POST request');
@@ -52,10 +52,10 @@ router.post("/api/workouts", ({ body }, res) => {
 router.get("/api/workouts/range", (req, res) => {
     db.Workout.find({}).limit(7)
         .then(dbWorkout => {
-            res.json(dbWorkout);
+            return res.json(dbWorkout);
         })
         .catch(err => {
-            res.json(err);
+            return res.json(err);
         });
 });
 
